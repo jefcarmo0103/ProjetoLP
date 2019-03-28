@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<GridPane style="-fx-background-color: white;" vgap="30" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.172-ea" fx:controller="sample.Controller">
+
+    <padding>
+        <Insets bottom="30.0" />
+    </padding>
+
+    <MenuBar fx:id="menuBar" onKeyPressed="#handleKeyInput" GridPane.rowIndex="0">
+        <menus>
+            <Menu text="Vendas">
+                <items>
+                    <MenuItem text="Nova Venda" />
+                    <MenuItem disable="true" text="Relatório de Vendas" />
+                </items>
+            </Menu>
+            <Menu text="Compras">
+                <items>
+                    <MenuItem text="Nova Compra" />
+                    <MenuItem text="Controle de Fornecedores"  onAction="#abreFornecedores" />
+                </items>
+            </Menu>
+            <Menu text="Estoque">
+                <items>
+                    <MenuItem text="Gestão do Estoque" onAction="#abrirEstoque" />
+                </items>
+            </Menu>
+            <Menu text="Sobre">
+                <items>
+                    <MenuItem disable="true" text="Manual" />
+                    <SeparatorMenuItem />
+                    <MenuItem onAction="#handleAboutAction" text="About" />
+                    <MenuItem text="Sair" />
+                </items>
+            </Menu>
+
+        </menus>
+    </MenuBar>
+
+    <VBox spacing="25" GridPane.rowIndex="1">
+        <HBox alignment="CENTER">
+            <Label text="Armarinhos Zizo's" textAlignment="CENTER">
+                <font>
+                    <Font name="Arial" size="25" />
+                </font>
+            </Label>
+        </HBox>
+
+        <VBox alignment="CENTER" spacing="10">
+            <Button mnemonicParsing="false" onAction="#novaVenda" text="Nova Venda" />
+            <Button fx:id="btnCompra" onAction="#novaCompra" text="Nova Compra" />
+            <Button fx:id="btnEstoque" text="Estoque" onAction="#estoque" />
+        </VBox>
+
+    </VBox>
+
+
+</GridPane>

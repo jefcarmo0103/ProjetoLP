@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="sample.Controller4" vgap="10">
+
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    </padding>
+
+    <Label style="-fx-font: NORMAL 20 Tahoma;" text="Controle de Clientes" GridPane.columnIndex="0" GridPane.rowIndex="0">
+    </Label>
+
+    <HBox alignment="CENTER" GridPane.rowIndex="1" spacing="5">
+        <Label text="Nome do Cliente:"></Label>
+        <TextField promptText="Nome do Cliente"/>
+    </HBox>
+
+    <VBox GridPane.rowIndex="2" spacing="5">
+        <TextField promptText="Data de Nascimento"/>
+        <TextField promptText="E-mail"/>
+        <TextField promptText="Telefone"/>
+    </VBox>
+
+    <HBox alignment="CENTER" GridPane.rowIndex="3" spacing="5">
+        <Button text="Incluir" onAction="#incluirCliente"/>
+        <Button text="Alterar" onAction="#alterarCliente"/>
+    </HBox>
+
+    <HBox alignment="CENTER" GridPane.rowIndex="4">
+        <Button text="Selecionar" onAction="#buscaExecutada"/>
+    </HBox>
+
+
+
+</GridPane>
